@@ -1,3 +1,12 @@
+@charset "utf-8";
+
+html {
+	box-sizing: border-box;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
 /* Use a google font for the first typeface, for the headers */
 header, 
 main h2{
