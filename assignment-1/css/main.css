@@ -1,0 +1,12 @@
+/* Use a google font for the first typeface, for the headers */
+header, 
+main h2{
+    color: grey;
+    font-family: Bevan, sans-serif;
+}
+
+/* Use a builtin typeface for the second type face, for the text */
+blockquote,
+p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
