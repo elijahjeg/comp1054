@@ -5,8 +5,8 @@ html {
 }
 
 body {
-    background-color: rgb(100, 100, 103);
-    color: white;
+    background-color: #5f5f61;
+    color: #f2f2f2;
 }
 
 *, *::before, *::after {
@@ -18,18 +18,20 @@ article {
     width: 80%;
     margin: 0 auto;
     gap: 50px;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5 1fr;
     grid-template-areas:
         "lyrics about-song"
         "lyrics about-artist";
 }
 
 /* Use a google font for the first typeface, for the page headings */
-header, 
-main h2{
+h1, 
+h2{
 
     font-family: Bevan, sans-serif;
 }
+
+
 
 header {
     text-align: center;
@@ -47,7 +49,7 @@ blockquote {
     margin: 10px;
 }
 
-/* Make the lyrics opaque when mouse hovers */
+/* Make the lyrics more transparent when mouse hovers */
 blockquote:hover {
     opacity: 80%;
 }
@@ -62,8 +64,8 @@ section:nth-of-type(2){
     grid-area: lyrics;
     background-color: rgb(121, 121, 124);
     text-align: center;
-    border-radius: 30px;
-
+    border-radius: 30px; /* Make it a box with rounded corners */
+    box-shadow: 0 8px 15px black; /* Add a shadow to make the lyrics "pop" out the page */
 }
 
 aside {
