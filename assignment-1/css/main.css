@@ -18,7 +18,7 @@ article {
     width: 80%;
     margin: 0 auto;
     gap: 50px;
-    grid-template-columns: 1.5 1fr;
+    grid-template-columns: 1.5fr 1fr;
     grid-template-areas:
         "lyrics about-song"
         "lyrics about-artist";
@@ -58,7 +58,6 @@ blockquote:hover {
 section:nth-of-type(1) {
     grid-area: about-song;
 }
-
 /* This is the lyrics section */
 section:nth-of-type(2){
     grid-area: lyrics;
@@ -66,6 +65,9 @@ section:nth-of-type(2){
     text-align: center;
     border-radius: 30px; /* Make it a box with rounded corners */
     box-shadow: 0 8px 15px black; /* Add a shadow to make the lyrics "pop" out the page */
+    background-image: url('../images/cn-tower.png');
+    background-size: cover; /* This avoids the bg image from being repeated and fully covers the elemebt */
+    background-position: top; /* Position the bg image at the right spot */
 }
 
 aside {
@@ -73,5 +75,5 @@ aside {
 }
 
 footer {
-    grid-area: footer;
+    text-align: center;
 }
