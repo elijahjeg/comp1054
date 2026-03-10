@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+header h1 {
+    color: #fb6433;
+    text-align: center;
+    order: 2;
+}
+
+header p {
+    order: 1;
+}
