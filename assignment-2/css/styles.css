@@ -2,7 +2,7 @@
 
 /* Decrease the max-width so it looks more like the magazine article */
 body {
-    max-width: 800px;
+    max-width: 650px;
     font-family: 'Bodoni Moda', serif;
     font-weight: 200;
 }
@@ -75,16 +75,55 @@ section h2 {
     
 }
 
+/* Setting a li to flex removes the number, so manually place it before the li */
+section li::before {
+    content: attr(value);
+    margin-right: 0.5rem;
+}
+
+/* My best attempt at making two text elements on the same line */
+section li {
+    display: flex;
+    font-size: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.1rem;
+}
+
+section li > * {
+    font-size: inherit;
+}
+
+section li h3 {
+    text-transform: uppercase;
+}
+
+section li strong {
+    font-weight: bold;
+}
+
 /* Set the grid areas for the sections and asides to position them in the desired layout */
 section:first-of-type{
     grid-area: live;
 }
 
+section:first-of-type h3{
+    color: #6da32b;
+}
 section:nth-of-type(2){
     grid-area: style;
 }
+
+section:nth-of-type(2) h3{
+    color: #e32c74;
+}
+
 section:last-of-type{
     grid-area: health;
+}
+
+section:last-of-type(2) h3{
+    color: #139fb4
 }
 
 aside:first-of-type{
