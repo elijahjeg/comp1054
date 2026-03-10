@@ -3,6 +3,8 @@
 /* Decrease the max-width so it looks more like the magazine article */
 body {
     max-width: 800px;
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 200;
 }
 
 /* Make header a flex container to put the p element above the h1 element and center the h1 element */
@@ -15,11 +17,15 @@ header {
 header h1 {
     color: #fb6433;
     text-align: center;
+    text-transform: lowercase;
+    font-size: 4.5rem;
+    font-weight: 150;
     order: 2;
 }
 
 header p {
     order: 1;
+    text-transform: uppercase;
 }
 
 /* Set the main element to a grid to easily position the sections and asides in the desired layout */
@@ -36,7 +42,7 @@ main {
 }
 
 /* Use pseudo-elements to add bars above each section */
-section::before{
+section::before {
     background-color: blue;
     content: "";
     display: block;
@@ -44,32 +50,44 @@ section::before{
     height: 10px;
 }
 
-section:first-of-type::before{
+
+section:first-of-type::before {
     background-color: #6da32b;
 }
 
-section:nth-of-type(2)::before{
+section:nth-of-type(2)::before { 
     background-color: #e32c74;
 }
 
-section:last-of-type::before{
+section:last-of-type::before {
     background-color: #139fb4;
 }
 
+section {
+    line-height: 0.5rem;
+}
+
+section h2 {
+    text-transform: lowercase;
+    letter-spacing: -0.1rem;
+    font-size: 1.6rem;
+    font-weight: 200;
+    
+}
 
 /* Set the grid areas for the sections and asides to position them in the desired layout */
 section:first-of-type{
     grid-area: live;
 }
 
-section:nth-of-type(2) {
+section:nth-of-type(2){
     grid-area: style;
 }
 section:last-of-type{
     grid-area: health;
 }
 
-aside:first-of-type {
+aside:first-of-type{
     grid-area: aside-img;
 }
 
