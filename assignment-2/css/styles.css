@@ -4,8 +4,8 @@
 body {
     max-width: 650px;
     font-family: 'Bodoni Moda', serif;
-    font-weight: 200;
-    transform: rotate(-1deg);
+    font-weight: 400;
+    transform: rotate(-1.1deg);
 }
 
 /* Make header a flex container to put the p element above the h1 element and center the h1 element */
@@ -20,7 +20,9 @@ header h1 {
     text-align: center;
     text-transform: lowercase;
     font-size: 5.5rem;
-    font-weight: 600;
+    font-weight: 0;
+    /* Changes the "optical size" in order to make the font more full */
+    font-variation-settings: 'opsz' 6;
     order: 2;
     margin: 0 auto 1rem;
 }
@@ -36,7 +38,7 @@ header p {
 main {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
-    grid-template-rows: 0.8fr auto auto auto;
+    grid-template-rows: 0.3fr 0.25fr auto auto;
     grid-template-areas: 
         "aside-img live"
         "aside-img style"
@@ -54,7 +56,6 @@ section::before {
     width: 250px;
     height: 10px;
 }
-
 
 section:first-of-type::before {
     background-color: #6da32b;
@@ -77,6 +78,7 @@ section h2 {
     letter-spacing: -0.1rem;
     font-size: 1.6rem;
     margin: 0.7rem;
+    font-weight: normal;
 }
 
 /* Setting a li to flex removes the number, so manually place it before the li */
@@ -103,9 +105,15 @@ section li h3 {
     margin: 0;
 }
 
-section li strong {
+section li p {
+    font-weight: normal;
+    margin: 0.3rem 0.5rem;
+}
+
+section li p abbr {
     font-weight: bold;
 }
+
 
 /* Set the grid areas for the sections and asides to position them in the desired layout */
 section:first-of-type{
@@ -141,7 +149,6 @@ aside:last-of-type {
     grid-area: aside-cover;
     justify-self: right;
     margin-right: 3rem;
-    margin-bottom: 6rem;
     border: 1px solid #d9a186;
     box-shadow: 2px 2px 1px rgb(0 0 0 / 10%);
     padding: 1px 5px;
@@ -156,4 +163,15 @@ aside:last-of-type h2{
 
 aside:last-of-type li {
     margin-top: 0.2rem;
+}
+
+footer p {
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 0.5em;
+}
+
+footer p em {
+    color: #fe6528;
+    font-style: normal;
 }
