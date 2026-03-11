@@ -156,6 +156,11 @@ figure {
     position: relative;
 }
 
+figure img {
+    height: 486px;
+    width: 307px;
+}
+
 figcaption {
     position: absolute;
     bottom: 8px;
