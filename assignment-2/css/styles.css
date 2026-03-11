@@ -5,6 +5,7 @@ body {
     max-width: 650px;
     font-family: 'Bodoni Moda', serif;
     font-weight: 200;
+    transform: rotate(-1deg);
 }
 
 /* Make header a flex container to put the p element above the h1 element and center the h1 element */
@@ -18,20 +19,24 @@ header h1 {
     color: #fb6433;
     text-align: center;
     text-transform: lowercase;
-    font-size: 4.5rem;
-    font-weight: 150;
+    font-size: 5.5rem;
+    font-weight: 600;
     order: 2;
+    margin: 0 auto 1rem;
 }
 
 header p {
     order: 1;
     text-transform: uppercase;
+    margin: 1.5rem 2rem 0;
+    font-size: .8rem
 }
 
 /* Set the main element to a grid to easily position the sections and asides in the desired layout */
 main {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
+    grid-template-rows: 0.8fr auto auto auto;
     grid-template-areas: 
         "aside-img live"
         "aside-img style"
@@ -71,8 +76,7 @@ section h2 {
     text-transform: lowercase;
     letter-spacing: -0.1rem;
     font-size: 1.6rem;
-    font-weight: 200;
-    
+    margin: 0.7rem;
 }
 
 /* Setting a li to flex removes the number, so manually place it before the li */
@@ -84,8 +88,8 @@ section li::before {
 /* My best attempt at making two text elements on the same line */
 section li {
     display: flex;
-    font-size: 0.5rem;
-    align-items: center;
+    font-size: 0.6rem;
+    align-items: baseline;
     flex-wrap: wrap;
     gap: 0.1rem;
 }
@@ -96,6 +100,7 @@ section li > * {
 
 section li h3 {
     text-transform: uppercase;
+    margin: 0;
 }
 
 section li strong {
@@ -122,7 +127,7 @@ section:last-of-type{
     grid-area: health;
 }
 
-section:last-of-type(2) h3{
+section:last-of-type h3{
     color: #139fb4
 }
 
@@ -130,6 +135,25 @@ aside:first-of-type{
     grid-area: aside-img;
 }
 
+/* Grid moves this far too down, use margin-bottom to bring it up */
 aside:last-of-type {
-    grid-area: aside-cover
+    max-width: 50%;
+    grid-area: aside-cover;
+    justify-self: right;
+    margin-right: 3rem;
+    margin-bottom: 6rem;
+    border: 1px solid #d9a186;
+    box-shadow: 2px 2px 1px rgb(0 0 0 / 10%);
+    padding: 1px 5px;
+}
+
+aside:last-of-type h2{
+    font-weight: normal;
+    text-transform: lowercase;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+aside:last-of-type li {
+    margin-top: 0.2rem;
 }
