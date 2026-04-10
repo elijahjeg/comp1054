@@ -28,3 +28,13 @@ td, th {
 thead th:nth-child(2){
     text-align: left;
 }
+
+th img {
+    width: 36px;
+    height: 24pxl
+}
+
+tbody th {
+    display: flex;
+    align-items: center;
+}
