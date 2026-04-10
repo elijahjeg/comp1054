@@ -1,6 +1,7 @@
 html {
     font-family: Arial, Helvetica, sans-serif;
 }
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -8,6 +9,8 @@ table {
 
 table caption {
     text-align: left;
+    font-weight: bold;
+    padding: 0.3em;
 }
 
 tr {
@@ -20,8 +23,8 @@ tbody tr:nth-child(odd){
 }
 
 td, th {
-    padding: .5em;
-    font-size: 0.8em;
+    padding: 1em 0.5em;
+    font-size: 0.7em;
     text-align: center;
 }
 
@@ -37,4 +40,13 @@ th img {
 tbody th {
     display: flex;
     align-items: center;
+}
+
+tbody th span {
+    color: gray;
+    border: 1px solid gray;
+    padding: 1.5px;
+    width: 1em;
+    margin-left: 1em;
+    border-radius: 0.3em
 }
