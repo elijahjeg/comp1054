@@ -35,7 +35,7 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 4rem;
 }
 
 a {
@@ -43,7 +43,7 @@ a {
   text-decoration: none;
 }
 
-li a, .link-github {
+:not(nav) > ul li a, .link-github {
   border: 0.1em solid var(--link-color);
 }
 
@@ -58,4 +58,12 @@ li a, .link-github {
   width: 1em;
   height: 1em;
   fill: #C5A059;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-evenly;
 }
