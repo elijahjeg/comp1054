@@ -30,7 +30,7 @@ body {
   line-height: 1.5;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   color: var(--heading-color);
   font-family: "Playfair Display", serif
 }
@@ -53,18 +53,18 @@ a {
 }
 
 /* Any link inside a list that isn't in the nav, as well as the star on github link. */
-:not(nav) > ul li a, .link-github {
+.link-github {
   border: 0.1em solid var(--link-color);
   display: inline-flex;
 }
 
 /* Add an an arrow after the link. Use mask-image to change the color of the arrow */
-:not(nav) > ul li a::after, .link-github::after {
+.link-github::after {
   content: "";
   display: inline;
   height: 1rem;
   width: 1rem;
-  mask-image: url('link-arrow.svg');
+  mask-image: url('images/link-arrow.svg');
   mask-size: 1em;
   background-color: var(--link-color);
   align-self: start;
@@ -126,10 +126,12 @@ ol {
   counter-reset: count 0;
 }
 
+/* Remove the margin between the heading and the list. */
 article#contribute h3 {
   margin-bottom: -10px;
 }
 
+/* Make the blockquote pop out */
 blockquote {
   background-color: rgb(255 255 255 / 4%);
   padding: 10px;
@@ -152,6 +154,32 @@ ol li::before {
   padding: 3px;
 }
 
+footer#files a{
+  display: block;
+  margin: 20px auto;
+  border: 2px solid var(--link-color);
+  width: fit-content;
+  padding: 5px;
+}
+
+[class^="link-download"] {
+  align-items: center;
+  display: flex;
+}
+
+[class^="link-download"]::before {
+  content: "";
+  display: inline-block;
+  background-color: var(--link-color);
+  mask-image: url('images/download.svg');
+  mask-size: 1em;
+  mask-repeat: no-repeat;
+  mask-position: bottom;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+
 @media screen and (width >= 600px) {
   body {
     padding: 2rem;
@@ -171,5 +199,6 @@ ol li::before {
 
   nav ul {
     flex-direction: row;
+    width: fit-content;
   }
 }
