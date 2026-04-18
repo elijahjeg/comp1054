@@ -27,15 +27,25 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  padding: 2rem;
+  line-height: 1.5;
 }
 
-h1, h2 {
+h1, h2, h3 {
   color: var(--heading-color);
   font-family: "Playfair Display", serif
 }
 
 h1 {
   font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 a {
@@ -87,6 +97,7 @@ nav ul {
   justify-content: space-evenly;
 }
 
+/* A scrollable box for these items instead of a long list */
 article#about section:nth-of-type(2) ul{
   overflow: scroll;
   height: 10rem;
@@ -100,6 +111,24 @@ article#about section:nth-of-type(2) ul{
   padding: 0.5em;
 }
 
-article#about section:nth-of-type(2) ul li {
-  text-align: center;
+/* Use CSS counters to add numbers before each item in the list. */
+ol {
+  list-style-type: none;
+  padding: 0;
+  counter-reset: count 0;
+}
+
+
+/* Style the number before each list item */
+ol li::before {
+  font-family: "Playfair Display", serif;
+  counter-increment: count 1;
+  content: counter(count);
+  width: 1em;
+  margin: 0.5rem auto;
+  display: block;
+  font-size: 3em;
+  color: var(--heading-color);
+  border-bottom: solid 2px var(--heading-color);
+  padding: 3px;
 }
