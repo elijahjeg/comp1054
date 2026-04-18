@@ -27,7 +27,6 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
   line-height: 1.5;
 }
 
@@ -37,11 +36,11 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 2.3rem;
+  font-size: 2rem;
 }
 
 h3 {
@@ -84,17 +83,26 @@ a {
   fill: #C5A059;
 }
 
+/* Center the content and give it a max width. */
+main {
+  margin: 0 auto;
+}
+
 header {
   margin-bottom: 2rem;
 }
 
 /* Styling for the nav links */
 nav ul {
+  padding: 20px;
   list-style-type: none;
   display: flex;
-  width: 80%;
+  flex-direction: column;
+  width: 50%;
   margin: 0 auto;
   justify-content: space-evenly;
+  gap: 1.2rem;
+  border: 1px solid var(--heading-color);
 }
 
 /* A scrollable box for these items instead of a long list */
@@ -118,6 +126,17 @@ ol {
   counter-reset: count 0;
 }
 
+article#contribute h3 {
+  margin-bottom: -10px;
+}
+
+blockquote {
+  background-color: rgb(255 255 255 / 4%);
+  padding: 10px;
+  border-radius: 1em;
+  width: 80%;
+  margin: 0 auto;
+}
 
 /* Style the number before each list item */
 ol li::before {
@@ -125,10 +144,32 @@ ol li::before {
   counter-increment: count 1;
   content: counter(count);
   width: 1em;
-  margin: 0.5rem auto;
+  margin: 0.3rem auto 1.2rem auto;
   display: block;
   font-size: 3em;
   color: var(--heading-color);
   border-bottom: solid 2px var(--heading-color);
   padding: 3px;
+}
+
+@media screen and (width >= 600px) {
+  body {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.3rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    flex-direction: row;
+  }
 }
