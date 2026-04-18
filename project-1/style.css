@@ -71,10 +71,7 @@ a {
 }
 
 .link-github {
-  display: inline-flex;
-  align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem;
 }
 
 .link-github svg{
@@ -156,15 +153,15 @@ ol li::before {
 
 footer#files a{
   display: block;
+}
+
+[class^="link-"] {
+  align-items: center;
+  display: flex;
   margin: 20px auto;
   border: 2px solid var(--link-color);
   width: fit-content;
   padding: 5px;
-}
-
-[class^="link-download"] {
-  align-items: center;
-  display: flex;
 }
 
 [class^="link-download"]::before {
@@ -201,4 +198,32 @@ footer#files a{
     flex-direction: row;
     width: fit-content;
   }
+}
+
+.profile {
+  border: 2px solid var(--heading-color);
+  box-shadow: 5px 5px 5px black;
+  padding: 2rem;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.profile h4 {
+  font-style: italic;
+  text-align: left;
+  margin: 0;  
+}
+
+.profile ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile ul li :first-child{
+  font-weight: bold;
 }
