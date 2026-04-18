@@ -43,8 +43,22 @@ a {
   text-decoration: none;
 }
 
+/* Any link inside a list that isn't in the nav, as well as the star on github link. */
 :not(nav) > ul li a, .link-github {
   border: 0.1em solid var(--link-color);
+  display: inline-flex;
+}
+
+/* Add an an arrow after the link. Use mask-image to change the color of the arrow */
+:not(nav) > ul li a::after, .link-github::after {
+  content: "";
+  display: inline;
+  height: 1rem;
+  width: 1rem;
+  mask-image: url('link-arrow.svg');
+  mask-size: 1em;
+  background-color: var(--link-color);
+  align-self: start;
 }
 
 .link-github {
@@ -58,6 +72,10 @@ a {
   width: 1em;
   height: 1em;
   fill: #C5A059;
+}
+
+header {
+  margin-bottom: 2rem;
 }
 
 nav ul {
