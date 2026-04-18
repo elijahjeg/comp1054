@@ -78,10 +78,28 @@ header {
   margin-bottom: 2rem;
 }
 
+/* Styling for the nav links */
 nav ul {
   list-style-type: none;
   display: flex;
   width: 80%;
   margin: 0 auto;
   justify-content: space-evenly;
+}
+
+article#about section:nth-of-type(2) ul{
+  overflow: scroll;
+  height: 10rem;
+  list-style-type: none;
+  line-height: 1.5;
+  font-size: 1.2rem;
+  margin: 2rem auto;
+  background-color: rgb(255 255 255 / 4%);
+  width: 50%;
+  border-radius: 1em;
+  padding: 0.5em;
+}
+
+article#about section:nth-of-type(2) ul li {
+  text-align: center;
 }
