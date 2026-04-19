@@ -176,7 +176,55 @@ footer#files a{
   width: 1.2rem;
 }
 
+/* Style the profile section with a border and a box shadow. Center it on the page and give it some padding. */
+.profile {
+  border: 2px solid var(--heading-color);
+  box-shadow: 5px 5px 5px black;
+  padding: 2rem;
+  margin: 0 auto;
+  width: 90%;
+}
 
+/* Make the name of the person italic and left aligned */
+.profile h4 {
+  font-style: italic;
+  text-align: left;
+  margin: 0;  
+}
+
+/* Remove the default list styling and padding */
+.profile ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Use flexbox to space the label and the information apart */
+.profile ul li {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Make the first child of each list item bold, which is the label for the information. */
+.profile ul li :first-child {
+  font-weight: bold;
+}
+
+.page-footer ul{
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  gap: 15px;
+}
+
+.page-footer a {
+  margin: 0 auto;
+  width: 170px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Media query for wider screens */
 @media screen and (width >= 600px) {
   body {
     padding: 2rem;
@@ -194,36 +242,22 @@ footer#files a{
     font-size: 1.5rem;
   }
 
+  /* Make the nav links horizontal */
   nav ul {
     flex-direction: row;
     width: fit-content;
   }
-}
 
-.profile {
-  border: 2px solid var(--heading-color);
-  box-shadow: 5px 5px 5px black;
-  padding: 2rem;
-  margin: 0 auto;
-  width: 60%;
-}
+  .profile {
+    width: 60%;
+  }
 
-.profile h4 {
-  font-style: italic;
-  text-align: left;
-  margin: 0;  
-}
-
-.profile ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.profile ul li {
-  display: flex;
-  justify-content: space-between;
-}
-
-.profile ul li :first-child{
-  font-weight: bold;
+  .page-footer ul {
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    gap: 1.5rem;
+  }
 }
