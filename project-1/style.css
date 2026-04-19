@@ -59,10 +59,16 @@ Use mask-image to change the color of the arrow
   mask-size: 50%;
   mask-repeat: no-repeat;
   left: 19px;
-  top: 24px;
+  top: 22px;
   width: 74px;
   height: 74px;
   z-index: 100;
+}
+
+/* Remove outline from the skip link when it is focused */
+main:focus {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 /* Style the headings with the heading color and a serif font */
@@ -89,6 +95,7 @@ a {
   color: var(--link-color);
   text-decoration: none;
 }
+
 
 /* Any link inside a list that isn't in the nav, as well as the star on github link */
 .link-github {
@@ -321,5 +328,17 @@ footer#files a{
     flex-wrap: wrap;
     margin: 0 auto;
     gap: 1.5rem;
+  }
+
+  /* Add a hover effect to the links to make them more interactive. */
+  a:hover {
+    opacity: 80%;
+  }
+}
+
+/* As per the accessibility requirement, disable smooth scrolling for users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
   }
 }
