@@ -13,12 +13,18 @@
 /* Universal box-sizing with inheritance (https://css-tricks.com/box-sizing/#article-header-id-6) */
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
 }
 
+/* 
+  Style the body with the background color and the body color
+  Use a sans-serif font for the body text
+  Center the content and use a line height of 1.5 for better readability
+*/
 body {
   background-color: var(--background-color);
   color: #ccd4c2;
@@ -30,13 +36,45 @@ body {
   line-height: 1.5;
 }
 
+/* Style the skip link to be a circular button with the link color as the background*/
+.skip-link {
+  font-size: 0; /* Hide the text of the link to make it a button instead */
+  border-radius: 100%;
+  width: 74px;
+  height: 74px;
+  background-color: var(--link-color);
+  margin-left: auto;
+}
+
+/* 
+Use a pseudo element to add an arrow pointing down to the skip link
+Use mask-image to change the color of the arrow
+*/
+.skip-link::before{
+  content: "";
+  display: block;
+  background-color: var(--background-color);
+  position: relative;
+  mask-image: url('images/down-arrow.svg');
+  mask-size: 50%;
+  mask-repeat: no-repeat;
+  left: 19px;
+  top: 24px;
+  width: 74px;
+  height: 74px;
+  z-index: 100;
+}
+
+/* Style the headings with the heading color and a serif font */
 h1, h2, h3, h4 {
   color: var(--heading-color);
   font-family: "Playfair Display", serif
 }
 
+/*  Use different font sizes for each heading level */
 h1 {
   font-size: 3rem;
+  margin-top: 0;
 }
 
 h2 {
@@ -52,7 +90,7 @@ a {
   text-decoration: none;
 }
 
-/* Any link inside a list that isn't in the nav, as well as the star on github link. */
+/* Any link inside a list that isn't in the nav, as well as the star on github link */
 .link-github {
   border: 0.1em solid var(--link-color);
   display: inline-flex;
